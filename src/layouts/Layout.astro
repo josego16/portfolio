@@ -2,25 +2,25 @@
 import '../styles/global.scss';
 
 // Base domain URL without trailing slash
-const domainBaseURL = 'https://devidev.io';
-const ogImageUrl    = 'https://devidev.io/img/meta.png';
+const domainBaseURL = '';
+const ogImageUrl    = '';
 
 // Website publisher & region
-const authorPublisher   = 'Dejan Vi.';
-const geoRegion         = 'DE-BY';
+const authorPublisher   = 'Jose Maria';
+const geoRegion         = 'ES'; // Assuming Spain as the region
 
 // SEO title, description and keywords
-const seoTitle          = 'devi|dev|io | Dejan Vi. | Full Stack Developer';
-const seoDescription    = 'Passionate web developer focused on creating clean, efficient, and scalable web applications with a modern tech stack. Specialized in Angular, TypeScript, and Supabase.';
-const seoKeywords       = 'Full Stack Developer, Dejan Vi, Munich, Papersend, Qivi, TECHPOINT, Angular, Typescript, Supabase';
+const seoTitle          = 'Jose Maria | Student in Search of a Job';
+const seoDescription    = 'Aspiring professional currently seeking job opportunities. Passionate about learning and growing in the tech industry.';
+const seoKeywords       = 'Jose Maria, Student, Job Seeker, Tech Enthusiast, Career Growth';
 
 // Twitter card data
 const twitter = {
     title:          seoTitle,
     description:    seoDescription,
     image:          ogImageUrl,
-    site:           '@devidev_io',
-    creator:        '@devidev_io'
+    site:           '@your_twitter_handle', // Replace with your Twitter handle if available
+    creator:        '@your_twitter_handle'  // Replace with your Twitter handle if available
 };
 
 // Open graph data
@@ -30,26 +30,26 @@ const openGraph = {
     url:            domainBaseURL,
     image:          ogImageUrl,
     type:           'website',
-    locale:         'en_US',
-    siteName:       'devi|dev|io'
+    locale:         'es_ES', // Assuming Spanish locale
+    siteName:       'Jose Maria Portfolio'
 };
 
 // Dublin core
 const dublinCore = {
-    title:          'devi|dev|io',
+    title:          'Jose Maria Portfolio',
     creator:        authorPublisher,
     publisher:      authorPublisher,
     rights:         authorPublisher,
     description:    seoDescription,
-    language:       'en',
-    type:           'Software',
+    language:       'es',
+    type:           'Personal',
     format:         'text/html'
 };
 
 ---
 
 <!doctype html>
-<html lang="en" class="bg-black text-gray-100 font-mono">
+<html lang="es" class="bg-black text-gray-100 font-mono">
 
     <head>
 

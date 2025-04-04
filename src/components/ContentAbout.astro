@@ -1,5 +1,5 @@
 ---
-import { Code } from 'astro:components';
+import { Code } from "astro:components";
 
 const code = `interface Developer {
     name: string;
@@ -10,59 +10,57 @@ const code = `interface Developer {
 interface TechStack {
     devOps: string[];
     backend: string[];
-   frontend: string[];
+    frontend: string[];
+    database: string[];
+    languages: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+type ContactType = 'github' | 'twitter' | 'linkedIn' | 'email';
 
 const techStack: TechStack = {
     devOps: [
-        'GitLab',
         'GitHub',
-        'Cloudflare',
         'Docker'
     ],
     frontend: [
-        'Angular',
-        'JavaScript',
-        'TypeScript',
-        'TailwindCSS',
-        'PrimeNG',
         'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
-        'SCSS',
-        'Markdown',
-        'WordPress'
+        'React',
+        'Markdown'
     ],
     backend: [
-        'Supabase',
         'Node.js',
-        'Bun',
-        'Deno',
-        'PostgreSQL',
+        'Express',
+        'Spring Boot',
+        'Ktor',
+    ],
+    database: [
         'MySQL',
-        'S3 Storage',
-        'Resend'
+        'MongoDB',
+        'SQLite'
+    ],
+    languages: [
+        'JavaScript'
+        'Java',
+        'Kotlin',
+        'HTML',
+        'CSS',
     ]
 };
 
 // Developer profile
 const me: Developer = {
-    name: 'Dejan Vi.',
+    name: 'Jose Maria.',
     skills: [
         ...techStack.devOps,
         ...techStack.backend,
-        ...techStack.frontend
+        ...techStack.frontend,
+        ...techStack.database,
+        ...techStack.languages
     ],
     interests: [
-        'Open Source',
-        'Security',
-        'Privacy',
-        'Performance',
-        'Self-Hosting',
-        'Networking'
+        'Web Development',
+        'Mobile Development',
+        'Learn Game Development'
     ]
 };
 
@@ -70,15 +68,13 @@ const me: Developer = {
 const contact = (type: ContactType): string => {
     switch (type) {
         case 'github':
-            return 'https://github.com/devidevio';
+            return 'https://github.com/josego16';
         case 'twitter':
-            return 'https://x.com/devidev_io';
+            return 'https://x.com/josemagomezz';
         case 'linkedIn':
-            return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
+            return 'https://www.linkedin.com/in/josego16';
         case 'email':
-            return 'hi@devidev.io';
+            return 'josemagomez53@gmail.com';
         default:
             return 'Send fax.';
     }
@@ -87,33 +83,27 @@ const contact = (type: ContactType): string => {
 `;
 ---
 
-<Code
-    code={code}
-    lang="js"
-    wrap={true}
-/>
+<Code code={code} lang="js" wrap={true} />
 
 <style is:global>
+  /* Custom styling for code block line numbers */
+  pre.astro-code {
+    @apply bg-transparent !important;
+  }
 
-    /* Custom styling for code block line numbers */
-    pre.astro-code {
-        @apply bg-transparent !important;
-    }
+  pre.astro-code code {
+    @apply block;
+    counter-reset: step;
+    counter-increment: step 0;
+  }
 
-    pre.astro-code code {
-        @apply block;
-        counter-reset: step;
-        counter-increment: step 0;
-    }
+  pre.astro-code code .line {
+    @apply relative;
+  }
 
-    pre.astro-code code .line {
-        @apply relative;
-    }
-
-    pre.astro-code code .line::before {
-        content: counter(step);
-        counter-increment: step;
-        @apply text-gray-600 pr-2;
-    }
-
+  pre.astro-code code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    @apply text-gray-600 pr-2;
+  }
 </style>
